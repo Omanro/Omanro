@@ -10,9 +10,12 @@ on:
     branches: [ "main" ]
 
 jobs:
+  build:
+      runs-on: ubuntu-latest
+
   deploy:
     # Add a dependency to the build job
-
+    needs: build
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write      # to deploy to Pages
